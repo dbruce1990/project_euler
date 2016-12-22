@@ -5,7 +5,7 @@
 
 function getMultiples(multiplicands, maxNum) {
   var multiples = [];
-  for(var i = 0; i <= maxNum; i++){
+  for(var i = 0; i < maxNum; i++){
     multiplicands.forEach(function(multiplicand){
       if(i % multiplicand == 0)
         if(!multiples.includes(i)){
@@ -24,7 +24,4 @@ function getSum(nums){
   return sum;
 }
 
-var  multiplicands = [3, 5];
-var multiples = getMultiples(multiplicands, 1000);
-console.log(multiples);
-console.log(getSum(multiples));
+//TODO implement tests with framework
