@@ -1,8 +1,12 @@
-var assert = require('assert');
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it('should return -1 when the value is not present', function() {
-      assert.equal(-1, [1,2,3].indexOf(4));
-    });
+var assert = require('chai').assert;
+
+beforeEach(function(){
+  require('../../../../problems/1/solution.js');
+  var solution = new Solution1();
+});
+
+describe('Solution 1', function() {
+  it('should return sum of all numbers', function() {
+    console.log(solution.getSum([1]));
   });
 });
