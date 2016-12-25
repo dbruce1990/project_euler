@@ -8,20 +8,45 @@ function getMultiples(multiplicands, maxNum) {
   for(var i = 0; i < maxNum; i++){
     multiplicands.forEach(function(multiplicand){
       if(i % multiplicand == 0)
-        if(!multiples.includes(i)){
           multiples.push(i);
-        }
     });
   }
+  multiples = stripDuplicates(multiples);
   return multiples;
 }
 
-function getSum(nums){
+function stripDuplicates(arr){
+  arr = arr.sort();
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] == arr[i+1])
+      arr.pop(i);
+  }
+  return arr;
+}
+
+function getSum(arrNums){
   var sum = 0;
-  nums.forEach(function(num){
-    sum = sum + num;
+  arrNums.forEach(function(arrNums){
+    arrNums = sum + arrNums;
   });
   return sum;
 }
 
-//TODO implement tests with framework
+function stopwatch(callback){
+  var startTime = new Date().getTime();
+  callback();
+  var endTime = new Date().getTime();
+  var totalTime = endTime - startTime;
+  console.log("Start Time: " + startTime + "\nEnd Time: " + endTime);
+  console.log("It took " + time + " ms to achieve the answer: " + sum);
+}
+
+
+stopwatch(function(){
+  var multiples = getMultiples([3,5], 1000);
+  var sum = getSum(multiples);
+});
+
+/*
+
+*/
