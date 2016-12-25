@@ -26,18 +26,6 @@ function addEvenNumbers(arr){
   return sum;
 }
 
-function stopwatch(callback){
-  var startTime = new Date().getTime();
-  callback();
-  var endTime = new Date().getTime();
-  var totalTime = endTime - startTime;
-  console.log("Execution Time: " + totalTime + " ms");
-  // console.log("Start Time: " + startTime + "\nEnd Time: " + endTime);
-  // console.log("It took " + totalTime + " ms to achieve the answer: " + answer);
-}
-
-stopwatch(function(){
-  var seq = getFibonacciSequence(4000000000);
-  var sum = addEvenNumbers(seq);
-  console.log(sum);
-});
+var seq = getFibonacciSequence(4000000);
+var sum = addEvenNumbers(seq);
+console.log(sum);
