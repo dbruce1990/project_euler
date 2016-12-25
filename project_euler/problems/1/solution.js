@@ -2,19 +2,26 @@
 //
 // Find the sum of all the multiples of 3 or 5 below 1000.
 
-
-function getMultiples(multiplicands, maxNum) {
+var Solution1 = function() {};
+Solution1.prototype.getMultiples = function(multiplicands, maxNum) {
   var multiples = [];
   for(var i = 0; i < maxNum; i++){
     multiplicands.forEach(function(multiplicand){
       if(i % multiplicand == 0)
+<<<<<<< HEAD:project_euler/problems/1/js/solution.js
           multiples.push(i);
+=======
+      if(!multiples.includes(i)){
+        multiples.push(i);
+      }
+>>>>>>> 36b9ea8a8275f684dba48cd193d0e5f08c27b165:project_euler/problems/1/solution.js
     });
   }
   multiples = stripDuplicates(multiples);
   return multiples;
 }
 
+<<<<<<< HEAD:project_euler/problems/1/js/solution.js
 function stripDuplicates(arr){
   arr = arr.sort();
   for(var i = 0; i < arr.length; i++){
@@ -25,12 +32,18 @@ function stripDuplicates(arr){
 }
 
 function getSum(arrNums){
+=======
+Solution1.prototype.getSum = function(nums){
+>>>>>>> 36b9ea8a8275f684dba48cd193d0e5f08c27b165:project_euler/problems/1/solution.js
   var sum = 0;
   arrNums.forEach(function(arrNums){
     arrNums = sum + arrNums;
   });
   return sum;
 }
+// 
+// var solution = new Solution1();
+// console.log(solution.getSum([1,2,3]));
 
 function stopwatch(callback){
   var startTime = new Date().getTime();
